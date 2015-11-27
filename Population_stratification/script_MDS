@@ -1,0 +1,101 @@
+
+##################################MDS
+#PBS -l nodes=1:ppn=1,walltime=5:00:00
+#PBS -k o
+echo "start of job"
+cd 
+cd /path/to/your/directory
+
+#Download 1000 genomes data
+wget ftp://ftp-trace.ncbi.nih.gov/1000genomes/ftp/release/20100804/ALL.2of4intersection.20100804.genotypes.vcf.gz
+
+#Convert vcf to Plink format
+module load plink2
+plink --vcf ALL.2of4intersection.20100804.genotypes.vcf.gz --make-bed --out ALL.2of4intersection.20100804.genotypes
+
+##QC on 1000 genomes data
+#Remove variants based on missing genotype data.
+plink --bfile ALL.2of4intersection.20100804.genotypes --geno 0.2 --allow-no-sex --make-bed --out 1kG_MDS
+
+#Remove individuals based on missing genotype data.
+plink --bfile 1kG_MDS --mind 0.05 --allow-no-sex --make-bed --out 1kG_MDS2
+
+#Remove variants based on missing genotype data.
+plink --bfile 1kG_MDS2 --geno 0.05 --allow-no-sex --make-bed --out 1kG_MDS3
+
+#Remove variants based on minor allele frequencies.
+plink --bfile 1kG_MDS3 --maf 0.1 --allow-no-sex --make-bed --out 1kG_MDS4
+
+
+#Extract the variants present in HapMap dataset from the 1000 genomes dataset.
+awk '{print$2}' HapMap_3_r3_12.bim > HapMap_SNPs.txt
+plink --bfile 1kG_MDS4 --extract HapMap_SNPs.txt --make-bed --out 1kG_MDS5
+
+#Extract the variants present in 1000 Genomes dataset from the HapMap dataset.
+awk '{print$2}' 1kG_MDS5.bim > 1kG_MDS5_SNPs.txt
+plink --bfile HapMap_3_r3_12 --extract 1kG_MDS5_SNPs.txt --recode --make-bed --out HapMap_MDS
+# The datasets now contain the exact same variants.
+
+##The datasets must have the same build. Change the build 1000 genomes data build.
+awk '{print$2,$4}' HapMap_MDS.map > buildhapmap.txt
+# buildhapmap.txt contains one SNP-id and physical position per line.
+
+plink --bfile 1kG_MDS5 --update-map buildhapmap.txt --make-bed --out 1kG_MDS6
+# 1kG_MDS6 and HapMap_MDS now have the same build.
+
+##Merge datasets
+plink --bfile HapMap_MDS --bmerge 1kG_MDS6.bed 1kG_MDS6.bim 1kG_MDS6.fam --allow-no-sex --make-bed --out MDS_merge
+# Merging did not work out because 469 variants with 3+ alleles were present. A list is provided in MDS_merge-merge.missnp. These variants can be deleted because of the low number.
+
+plink --bfile HapMap_MDS --exclude MDS_merge-merge.missnp --make-bed --out HapMap_MDS2
+plink --bfile 1kG_MDS6 --exclude MDS_merge-merge.missnp --make-bed --out 1kG_MDS7
+
+#Merge datasets excluded variants with 3+ alleles.
+plink --bfile HapMap_MDS2 --bmerge 1kG_MDS7.bed 1kG_MDS7.bim 1kG_MDS7.fam --allow-no-sex --make-bed --out MDS_merge2
+
+##Perform MDS on HapMap-CEU data anchored by 1000 genomes data.
+plink --bfile MDS_merge2 --genome --out MDS_merge2
+plink --bfile MDS_merge2 --read-genome MDS_merge2.genome --cluster --mds-plot 10 --out MDS_merge2
+
+
+###MDS-plot
+
+#Download file with population information of 1000 genomes.
+wget ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20100804/20100804.ALL.panel
+# The file 20100804.ALL.panel contains population codes of the individuals of 1000 genomes.
+
+#Convert population codes into superpopulation codes.
+awk '{print$1,$1,$2}' 20100804.ALL.panel > race_1kG.txt
+sed 's/JPT/ASN/g' race_1kG.txt>race_1kG2.txtsed 's/ASW/AFR/g' race_1kG2.txt>race_1kG3.txtsed 's/CEU/EUR/g' race_1kG3.txt>race_1kG4.txtsed 's/CHB/ASN/g' race_1kG4.txt>race_1kG5.txtsed 's/CHD/ASN/g' race_1kG5.txt>race_1kG6.txtsed 's/YRI/AFR/g' race_1kG6.txt>race_1kG7.txtsed 's/LWK/AFR/g' race_1kG7.txt>race_1kG8.txtsed 's/TSI/EUR/g' race_1kG8.txt>race_1kG9.txtsed 's/MXL/AMR/g' race_1kG9.txt>race_1kG10.txtsed 's/GBR/EUR/g' race_1kG10.txt>race_1kG11.txtsed 's/FIN/EUR/g' race_1kG11.txt>race_1kG12.txtsed 's/CHS/ASN/g' race_1kG12.txt>race_1kG13.txtsed 's/PUR/AMR/g' race_1kG13.txt>race_1kG14.txt
+
+#Create racefile of own data.
+awk '{print$1,$2,"OWN"}' HapMap_MDS.fam>racefile_own.txt
+
+#Concatenate racefiles
+cat race_1kG14.txt racefile_own.txt | sed -e '1i\FID IID race' > racefile.txt
+
+
+module load R
+Rscript MDS_merged.R 
+
+
+##Exclude ethnic outliers.
+#Select individuals in HapMap data below cut-off thresholds. The cut-off levels are not fixed thresholds but have to be determined based on the visualization of the first two dimensions. To exclude ethnic outliers, the thresholds need to be set around the cluster of population of interest.
+awk '{ if ($4 <-0.048 && $5 >0.03) print $1,$2 }' MDS_merge2.mds > EUR_MDS_merge2
+
+#Extract these individuals in HapMap data.
+plink --bfile HapMap_3_r3_12 --keep EUR_MDS_merge2 --make-bed --out HapMap_3_r3_13
+
+##Create covariates based on MDS.
+#Perform an MDS ONLY on HapMap data without ethnic outliers. The values of the 10 dimensions are subsequently used as covariates in the association analysis.
+plink --bfile HapMap_3_r3_13 --genome --out HapMap_3_r3_13
+plink --bfile HapMap_3_r3_13 --read-genome HapMap_3_r3_13.genome --cluster --mds-plot 10 --out HapMap_3_r3_13_mds
+
+awk '{print$1, $2, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13}' HapMap_3_r3_13_mds.mds > covar_mds.txt
+# The values in covar_mds.txt can adjusted for in the Genome-Wide Association analysis.
+
+
+echo "start of job"
+echo "end of job"
+
+
