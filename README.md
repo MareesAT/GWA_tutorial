@@ -25,7 +25,7 @@ Content:
 Note:
 - The first 3 tutorials are not independent, they should be followed in the order given above, according to their number.
 - The .zip files contain multiple scripts, in order to succesfully complete the tutorials it is essential to download all files from these folders.
-- Opening the .zip and PRS.doc file requires clicking on the folder/file followed by clicking on "View Raw"
+- Opening the .zip and PRS.doc folder/file requires clicking on the folder/file followed by clicking on "View Raw"
 - The documents "script_simulation" and "downloads" are not essential for completing the tutorials. 
 
 If you have questions you can contact.....
