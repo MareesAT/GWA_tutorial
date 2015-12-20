@@ -5,10 +5,10 @@
 
 
 This GitHub page provides several tutorials about techniques used to analyze genetic data. We have made scripts available for:
-1) All essential GWAS QC steps along with scripts for data visualization. 
-2) Dealing with population stratification, using 1000 genomes as a reference. 
-3) Association analyses of GWAS data.
-4) Polygenic risk score (PRS) anaylses. 
+- 1) All essential GWAS QC steps along with scripts for data visualization. 
+- 2) Dealing with population stratification, using 1000 genomes as a reference. 
+- 3) Association analyses of GWAS data.
+- 4) Polygenic risk score (PRS) anaylses. 
 
 The scripts downloadable from this GitHub page can be purely seen as tutorials and used for educational purposes, but can also be used as a template for analyzing your own data.
 
@@ -23,7 +23,7 @@ Content:
 - downloads
 
 Note:
-- The first 3 tutorials not independent, they should be followed in the order given above, according to their number.
+- The first 3 tutorials are not independent, they should be followed in the order given above, according to their number.
 - The .zip files contain multiple scripts, in order to succesfully complete the tutorials it is essential to download all files from these folders.
 - Opening the PRS.doc file requires clicking on the file followed by clicking on "View Raw"
 - The documents "script_simulation" and "downloads" are not essential for completing the tutorials. 
