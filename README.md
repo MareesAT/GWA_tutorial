@@ -1,5 +1,8 @@
+GWA tutorial
+-------------------------------------------------------------------------------------------------------------
+
+
 This GitHub page provides several tutorials about techniques used to analyze genetic data. 
---------------------------------------------------------------------------------
 
 We have made scripts available for:
 1) All essential GWAS QC steps along with scripts for data visualization.
