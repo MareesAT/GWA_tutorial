@@ -25,7 +25,7 @@ Note, without placing all files belonging to a specific tutorial in the same dir
 Furthermore, the first 3 tutorials are not independent; they should be followed in the order given above, according to their number. For example, the files generated at the end of tutorial 1 are essential in performing tutorial 2. Therefore, those files should be moved/copied to the directory in which tutorial 2 is executed. In addition, the files from tutorial 2 are essential for tutorial 3.
 The fourth tutorial (4_ PRS.doc) is a MS Word document, and runs independently of the previous 3 tutorials.
 
-All scripts are developed for UNIX/Linux computer/server, and all commands should be typed/pasted at the shell prompt.
+All scripts are developed for UNIX/Linux computer resources, and all commands should be typed/pasted at the shell prompt.
 
 Note:
 The *.zip files contain multiple files, in order to successfully complete the tutorials it is essential to download all files form the *.zip files and upload them to your working directory.
