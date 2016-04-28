@@ -29,7 +29,7 @@ All scripts are developed for UNIX/Linux computer/server, and all commands shoul
 
 Note:
 The *.zip files contain multiple files, in order to successfully complete the tutorials it is essential to download all files form the *.zip files and upload them to your working directory.
-Opening the *.zip folders and PRS.doc file requires clicking on the folder/file followed by clicking on "View Raw"
+Opening the *.zip folders and PRS.doc file requires clicking on the folder/file followed by clicking on "View Raw".
 
 Contact:
 Please email Andries Marees (a.t.marees@amc.uva.nl) for questions
