@@ -37,7 +37,7 @@ Please email Andries Marees (a.t.marees@amc.uva.nl) for questions
 
 ---------------------------------------------------------------------------------------------------------------
 
-### Step-by-step-guide for this tutorial ### 
+##### Step-by-step-guide for this tutorial ##### 
 
 Step-by-step-guide for researches new to Unix and/or genetic analyses. 
 
@@ -68,7 +68,7 @@ Step 2) Download the files from the GitHub page
 > git clone https://github.com/MareesAT/GWA_tutorial.git
 
 - unzip the folder of the first tutorial and move into the newly created directory.
-# Execute the commands below
+### Execute the commands below ###
 > unzip 1_QC_GWAS.zip
 > cd 1_QC_GWAS
 
