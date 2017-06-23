@@ -55,14 +55,14 @@ This guide serves researchers who have none or very little experience with Unix,
 
 ## Preparation
 
-Step 1) The current set of tutorials on this GitHub page are based on a GNU/Linux-based computer, therefore: 
+###Step 1) The current set of tutorials on this GitHub page are based on a GNU/Linux-based computer, therefore: 
 - Make sure you have access to a GNU/Linux-based computer resource.
 - Create a directory where you plan to conduct the analysis.
 #### Execute the command below (copy-and-paste without the prompt: > and without the {})
 > mkdir {name_for_your_directory}
 <br />
 
-Step 2) Download the files from the GitHub page 
+###Step 2) Download the files from the GitHub page 
 - Change the directory of your Unix machine to the created directory from step 1.
 #### Execute the command below
 > cd HOME/{user}/{path/name_for_your_directory}  
@@ -74,7 +74,7 @@ Step 2) Download the files from the GitHub page
 > cd 1_QC_GWAS
 <br />
 
-Step 3) This tutorial requires the open-source programming language R and the open-source whole genome association analysis toolset PLINK version 1.07. If these are not already installed on your computer they be downloaded from respectively:
+###Step 3) This tutorial requires the open-source programming language R and the open-source whole genome association analysis toolset PLINK version 1.07. If these are not already installed on your computer they be downloaded from respectively:
 https://www.r-project.org/
 http://zzz.bwh.harvard.edu/plink/
 
@@ -85,7 +85,7 @@ http://zzz.bwh.harvard.edu/plink/
 
 ## Execution of tutorial 1
 
-Step 4) Once you've created a directory in which you have downloaded and unzipped the folder: 1_QC_GWAS.zip, you are ready to start the first part of the actual tutorial.
+###Step 4) Once you've created a directory in which you have downloaded and unzipped the folder: 1_QC_GWAS.zip, you are ready to start the first part of the actual tutorial.
 All steps of this tutorial will be excecuted using the commands from the main script: 1_Main_script_QC_GWAS.txt, the only thing necessary in completing the tutorial is copy-and-paste the commands from the main script at the prompt of your Unix device. Not, make sure you are the directory containing all files, the directory after the last command of step 2. There is no need to open the other files manually. 
 
 There are two ways to use the main script:  
