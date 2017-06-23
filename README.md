@@ -55,7 +55,7 @@ This guide serves researchers who have none or very little experience with Unix,
 
 ## Preparation
 
-The current set of tutorials on this GitHub page are based on a GNU/Linux-based computer, therefore: 
+Step 1) The current set of tutorials on this GitHub page are based on a GNU/Linux-based computer, therefore: 
 - Make sure you have access to a GNU/Linux-based computer resource.
 - Create a directory where you plan to conduct the analysis.
 #### Execute the command below (copy-and-paste without the prompt: > and without the {})
