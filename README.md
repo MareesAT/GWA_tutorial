@@ -60,7 +60,7 @@ Step 1) The current set of tutorials on this GitHub page are based on a GNU/Linu
 - Create a directory where you plan to conduct the analysis.
 #### Execute the command below (copy-and-paste without the prompt: > and without the {})
 > mkdir {name_for_your_directory}
-
+<br />
 
 Step 2) Download the files from the GitHub page 
 - Change the directory of your Unix machine to the created directory from step 1.
