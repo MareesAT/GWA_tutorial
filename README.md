@@ -37,12 +37,12 @@ Please email Andries Marees (a.t.marees@amc.uva.nl) for questions
 
 ---------------------------------------------------------------------------------------------------------------
 
-##### Step-by-step-guide for this tutorial ##### 
+# Step-by-step-guide for this tutorial 
 
 Step-by-step-guide for researches new to Unix and/or genetic analyses. 
 
 
-##### Introduction #####
+## Introduction
 
 The tutorial consist of four separate parts. The first three are dependent of each other and can only be performed in consecutive order, starting from the first (1_QC_GWAS.zip), then the second (2_Population_stratification.zip, followed by the third (3_Association_GWAS). The fourth part (4_ PRS.doc) can be performed independently. 
 
