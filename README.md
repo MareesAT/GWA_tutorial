@@ -85,7 +85,7 @@ http://zzz.bwh.harvard.edu/plink/
 
 ## Execution of tutorial 1
 
-###Step 4) Once you've created a directory in which you have downloaded and unzipped the folder: 1_QC_GWAS.zip, you are ready to start the first part of the actual tutorial.
+Step 4) Once you've created a directory in which you have downloaded and unzipped the folder: 1_QC_GWAS.zip, you are ready to start the first part of the actual tutorial.
 All steps of this tutorial will be excecuted using the commands from the main script: 1_Main_script_QC_GWAS.txt, the only thing necessary in completing the tutorial is copy-and-paste the commands from the main script at the prompt of your Unix device. Not, make sure you are the directory containing all files, the directory after the last command of step 2. There is no need to open the other files manually. 
 
 There are two ways to use the main script:  
