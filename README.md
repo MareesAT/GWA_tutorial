@@ -37,7 +37,7 @@ Please email Andries Marees (a.t.marees@amc.uva.nl) for questions
 
 ---------------------------------------------------------------------------------------------------------------
 
-# Step-by-step-guide for this tutorial 
+### Step-by-step-guide for this tutorial ### 
 
 Step-by-step-guide for researches new to Unix and/or genetic analyses. 
 
@@ -98,7 +98,7 @@ There are two ways to use the main script:
 # To exit vi and return to your directory use: 
 :q
 
-- From there, using either option 1 or 2, you can read the information given at every step of script ì, 1_Main_script_QC_GWAS.txtî and copy paste the commands after the prompt on your Unix machine. 
+- From there, using either option 1 or 2, you can read the information given at every step of script ‚Äú, 1_Main_script_QC_GWAS.txt‚Äù and copy paste the commands after the prompt on your Unix machine. 
 
 Note, If R or PLINK are installed in a directory other than your working directory please specify the path to the excecutables in the given script. Or copying the executables of the programs to your working directory. For example, by using:
 cp {path/program name} {path/directiory}
