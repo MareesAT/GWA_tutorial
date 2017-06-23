@@ -5,7 +5,7 @@ GWA tutorial
 This GitHub page provides several tutorials about techniques used to analyze genetic data. 
 Underneath this README we have provided a step-by-step guide to help researchers without experience in Unix to complete these tutorials succesfully. For reseachers familiar with Unix this README will likely be sufficient.
 
-We have made scripts available for:
+#### We have made scripts available for:
 * 1) All essential GWAS QC steps along with scripts for data visualization.
 * 2) Dealing with population stratification, using 1000 genomes as a reference.
 * 3) Association analyses of GWAS data.
