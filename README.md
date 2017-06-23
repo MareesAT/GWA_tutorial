@@ -53,22 +53,22 @@ We assume that you have read the accompanying article "A tutorial on conducting 
 This guide serves researchers who have none or very little experience with Unix, by helping them through the Unix commands in preparation of the tutorial. 
 
 
-##### Preparation #####
+## Preparation
 
 Step 1) The current set of tutorials on this GitHub page are based on a GNU/Linux-based computer, therefore: 
 - Make sure you have access to a GNU/Linux-based computer resource.
 - Create a directory where you plan to conduct the analysis.
-# Execute the command below (copy-and-paste without the prompt: > and without the {})
+#### Execute the command below (copy-and-paste without the prompt: > and without the {})
 > mkdir {name_for_your_directory}
 
 Step 2) Download the files from the GitHub page 
 - Change the directory of your Unix machine to the created directory from step 1.
-# Execute the command below
+#### Execute the command below
 > cd HOME/{user}/{path/name_for_your_directory}  
 > git clone https://github.com/MareesAT/GWA_tutorial.git
 
 - unzip the folder of the first tutorial and move into the newly created directory.
-### Execute the commands below ###
+#### Execute the commands below
 > unzip 1_QC_GWAS.zip
 > cd 1_QC_GWAS
 
@@ -81,21 +81,21 @@ http://zzz.bwh.harvard.edu/plink/
 - Congratulations everything is set up to start the tutorial!
 
 
-##### Execution of tutorial 1 #####
+## Execution of tutorial 1
 
 Step 4) Once you've created a directory in which you have downloaded and unzipped the folder: 1_QC_GWAS.zip, you are ready to start the first part of the actual tutorial.
 All steps of this tutorial will be excecuted using the commands from the main script: 1_Main_script_QC_GWAS.txt, the only thing necessary in completing the tutorial is copy-and-paste the commands from the main script at the prompt of your Unix device. Not, make sure you are the directory containing all files, the directory after the last command of step 2. There is no need to open the other files manually. 
 
 There are two ways to use the main script:  
-# Option 1
+#### Option 1
 - If you are a novice user, we recommend opening 1_Main_script_QC_GWAS.txt in WordPad or Notepad on your windows computer.
 
-# Option 2
+#### Option 2
 - Alternatively, 1_Main_script_QC_GWAS.txt can be opened using an Unix text editor, for example vi.
-# Open the main script with vi :
+#### Open the main script with vi :
 > vi 1_Main_script_QC_GWAS.txt
 - This enables you to read the script within the Unix environment and copy the command lines from it.
-# To exit vi and return to your directory use: 
+#### To exit vi and return to your directory use: 
 :q
 
 - From there, using either option 1 or 2, you can read the information given at every step of script “, 1_Main_script_QC_GWAS.txt” and copy paste the commands after the prompt on your Unix machine. 
@@ -107,16 +107,16 @@ For more information of using R and PLINK in a Unix/Linux environment we refer t
 http://zzz.bwh.harvard.edu/plink/download.shtml#nixs
 
 
-##### Execution of tutorial 2&3 #####
+## Execution of tutorial 2&3
 
 - Unzip the tutorial folder of choice as described in step 2.
 - Use the output file from the last tutorial as input for the tutorial you want to start.
-# The command below can be used to copy the file to another directory
+#### The command below can be used to copy the file to another directory
 > cp {path/directory/file} {path/directory}
 
 - Use 2_Main_script_MDS.txt for the second tutorial and 3_Main_script_association_GWAS.txt for the third tutorial.
 
 
-##### Execution of tutorial 4 #####
+## Execution of tutorial 4
 
 4_ PRS.doc works independently from the other tutorials. After downloading 4_ PRS.doc, you can run the script, without the need for unzipping, in a directory of choice.
