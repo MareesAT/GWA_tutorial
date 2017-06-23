@@ -60,7 +60,7 @@ Step 1) The current set of tutorials on this GitHub page are based on a GNU/Linu
 - Create a directory where you plan to conduct the analysis.
 #### Execute the command below (copy-and-paste without the prompt: > and without the {})
 > mkdir {name_for_your_directory}
-_
+
 
 Step 2) Download the files from the GitHub page 
 - Change the directory of your Unix machine to the created directory from step 1.
@@ -72,7 +72,7 @@ Step 2) Download the files from the GitHub page
 #### Execute the commands below
 > unzip 1_QC_GWAS.zip
 > cd 1_QC_GWAS
-_
+<br />
 
 Step 3) This tutorial requires the open-source programming language R and the open-source whole genome association analysis toolset PLINK version 1.07. If these are not already installed on your computer they be downloaded from respectively:
 https://www.r-project.org/
