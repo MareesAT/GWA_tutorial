@@ -14,7 +14,7 @@ We have made scripts available for:
 The scripts downloadable from this GitHub page can be seen purely as tutorials and used for educational purposes, but can also be used as a template for analyzing your own data.
 All scripts/tutorials from this GitHub page use freely downloadable data, commands to download the necessary data can be found in the scripts. 
 
-Content:
+#### Content:
 * 1_QC_GWAS.zip
 * 2_Population_stratification.zip
 * 3_Association_GWAS
@@ -55,14 +55,14 @@ This guide serves researchers who have none or very little experience with Unix,
 
 ## Preparation
 
-###Step 1) The current set of tutorials on this GitHub page are based on a GNU/Linux-based computer, therefore: 
+The current set of tutorials on this GitHub page are based on a GNU/Linux-based computer, therefore: 
 - Make sure you have access to a GNU/Linux-based computer resource.
 - Create a directory where you plan to conduct the analysis.
 #### Execute the command below (copy-and-paste without the prompt: > and without the {})
 > mkdir {name_for_your_directory}
 <br />
 
-###Step 2) Download the files from the GitHub page 
+Step 2) Download the files from the GitHub page 
 - Change the directory of your Unix machine to the created directory from step 1.
 #### Execute the command below
 > cd HOME/{user}/{path/name_for_your_directory}  
@@ -74,7 +74,7 @@ This guide serves researchers who have none or very little experience with Unix,
 > cd 1_QC_GWAS
 <br />
 
-###Step 3) This tutorial requires the open-source programming language R and the open-source whole genome association analysis toolset PLINK version 1.07. If these are not already installed on your computer they be downloaded from respectively:
+Step 3) This tutorial requires the open-source programming language R and the open-source whole genome association analysis toolset PLINK version 1.07. If these are not already installed on your computer they be downloaded from respectively:
 https://www.r-project.org/
 http://zzz.bwh.harvard.edu/plink/
 
