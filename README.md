@@ -3,7 +3,7 @@ GWA tutorial
 
 
 This GitHub page provides several tutorials about techniques used to analyze genetic data. 
-Underneath this README we have provided a step-by-step guide to help researchers without experience in Unix to complete these tutorials succesfully. For reseachers familiar with Unix this README will likely be sufficient.
+Underneath this README we have provided a step-by-step guide to help researchers without experience in Unix to complete these tutorials succesfully. For reseachers familiar with Unix this README will probably be sufficient.
 
 #### We have made scripts available for:
 * 1) All essential GWAS QC steps along with scripts for data visualization.
@@ -29,8 +29,8 @@ The fourth tutorial (4_ PRS.doc) is a MS Word document, and runs independently o
 All scripts are developed for UNIX/Linux computer resources, and all commands should be typed/pasted at the shell prompt.
 
 Note:
-The *.zip files contain multiple files, in order to successfully complete the tutorials it is essential to download all files form the *.zip files and upload them to your working directory.
-Opening the *.zip folders and PRS.doc file requires clicking on the folder/file followed by clicking on "View Raw".
+The *.zip files contain multiple files, in order to successfully complete the tutorials it is essential to download all files from the *.zip files and upload them to your working directory.
+To pull all tutorials to your computer simply use the following command: git clone https://github.com/MareesAT/GWA_tutorial.git . Alternatively, you can manually open the *.zip folders and PRS.doc file by clicking on the folder/file followed by clicking on "View Raw".
 
 Contact:
 Please email Andries Marees (a.t.marees@amc.uva.nl) for questions
@@ -46,11 +46,12 @@ Step-by-step-guide for researches new to Unix and/or genetic analyses.
 
 The tutorial consist of four separate parts. The first three are dependent of each other and can only be performed in consecutive order, starting from the first (1_QC_GWAS.zip), then the second (2_Population_stratification.zip, followed by the third (3_Association_GWAS). The fourth part (4_ PRS.doc) can be performed independently. 
 
-The Unix commands provided in this guide should be typed/copy-and-pasted after the prompt ($ or >) on your Unix machine. Note, the > in front of the commands should not be copy-and-pasted. Only what comes after the >.
+The Unix commands provided in this guide should be typed/copy-and-pasted after the prompt ($ or >) on your Unix machine. Note, the ">" in front of the commands should not be copy-and-pasted. Only what comes after the ">".
 
 We assume that you have read the accompanying article "A tutorial on conducting Genome-Wide-Association Studies: Quality control and statistical analysis
-", which should provide you with a basic theoretical understanding of the type of analyses covered in this tutorial. 
-This guide serves researchers who have none or very little experience with Unix, by helping them through the Unix commands in preparation of the tutorial. 
+" (https://www.ncbi.nlm.nih.gov/pubmed/29484742), which should provide you with a basic theoretical understanding of the type of analyses covered in this tutorial. 
+
+This step-by-step guide serves researchers who have none or very little experience with Unix, by helping them through the Unix commands in preparation of the tutorial. 
 
 
 ## Preparation
@@ -58,7 +59,7 @@ This guide serves researchers who have none or very little experience with Unix,
 Step 1) The current set of tutorials on this GitHub page are based on a GNU/Linux-based computer, therefore: 
 - Make sure you have access to a GNU/Linux-based computer resource.
 - Create a directory where you plan to conduct the analysis.
-#### Execute the command below (copy-and-paste without the prompt: > and without the {})
+#### Execute the command below (copy-and-paste without the prompt: > and without the {} ).
 > mkdir {name_for_your_directory}
 <br />
 
@@ -68,15 +69,16 @@ Step 2) Download the files from the GitHub page
 > cd HOME/{user}/{path/name_for_your_directory}  
 > git clone https://github.com/MareesAT/GWA_tutorial.git
 
-- unzip the folder of the first tutorial and move into the newly created directory.
+- Unzip the folder of the first tutorial and move into the newly created directory.
 #### Execute the commands below
 > unzip 1_QC_GWAS.zip
 > cd 1_QC_GWAS
 <br />
 
-Step 3) This tutorial requires the open-source programming language R and the open-source whole genome association analysis toolset PLINK version 1.07. If these are not already installed on your computer they be downloaded from respectively:
+Step 3) This tutorial requires the open-source programming language R and the open-source whole genome association analysis toolset PLINK version 1.07 (all commands also work with PLINK2). If these programs are not already installed on your computer they can be downloaded from respectively:
 https://www.r-project.org/
 http://zzz.bwh.harvard.edu/plink/
+https://www.cog-genomics.org/plink2
 
 - We recommend using the newest versions. These websites will guide you through the installation process.
 
@@ -86,11 +88,11 @@ http://zzz.bwh.harvard.edu/plink/
 ## Execution of tutorial 1
 
 Step 4) Once you've created a directory in which you have downloaded and unzipped the folder: 1_QC_GWAS.zip, you are ready to start the first part of the actual tutorial.
-All steps of this tutorial will be excecuted using the commands from the main script: 1_Main_script_QC_GWAS.txt, the only thing necessary in completing the tutorial is copy-and-paste the commands from the main script at the prompt of your Unix device. Not, make sure you are the directory containing all files, the directory after the last command of step 2. There is no need to open the other files manually. 
+All steps of this tutorial will be excecuted using the commands from the main script: 1_Main_script_QC_GWAS.txt, the only thing necessary in completing the tutorial is copy-and-paste the commands from the main script at the prompt of your Unix device. Note, make sure you are in the directory containing all files, which is the directory after the last command of step 2. There is no need to open the other files manually. 
 
 There are two ways to use the main script:  
 #### Option 1
-- If you are a novice user, we recommend opening 1_Main_script_QC_GWAS.txt in WordPad or Notepad on your windows computer.
+- If you are a novice user, we recommend opening 1_Main_script_QC_GWAS.txt in WordPad or Notepad on your Windows computer.
 
 #### Option 2
 - Alternatively, 1_Main_script_QC_GWAS.txt can be opened using an Unix text editor, for example vi.
@@ -100,10 +102,10 @@ There are two ways to use the main script:
 #### To exit vi and return to your directory use: 
 > :q
 
-- From there, using either option 1 or 2, you can read the information given at every step of script “, 1_Main_script_QC_GWAS.txt” and copy paste the commands after the prompt on your Unix machine. 
+- From there, using either option 1 or 2, you can read the information given at every step of script “, 1_Main_script_QC_GWAS.txt” and copy-paste the commands after the prompt on your Unix machine. 
 
-Note, If R or PLINK are installed in a directory other than your working directory please specify the path to the excecutables in the given script. Or copying the executables of the programs to your working directory. For example, by using:
-cp {path/program name} {path/directiory}
+Note, if R or PLINK are installed in a directory other than your working directory please specify the path to the excecutables in the given script. Alternatively, you can copy the executables of the programs to your working directory. For example, by using:
+cp {path/program name} {path/directiory}. However, when using a cluster computer, commands such a "module load plink", and "module load R" will suffice, regardless of directory.
 
 For more information of using R and PLINK in a Unix/Linux environment we refer to:
 http://zzz.bwh.harvard.edu/plink/download.shtml#nixs
